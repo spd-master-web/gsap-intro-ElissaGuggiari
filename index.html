@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>GSAP</title>
-</head>
-<body>
-  
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Elissa - GSAP Exercise</title>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="box" id="animate"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <script>
+            //JavaScript comment
+            console.log("hello, I am robot")
+            // gsap library, .to() method, "" selector, {} instructions
+            gsap.to("#animate", {duration: 1, delay: 1, backgroundColor: "#ff0000"})
+            // timeline
+            var ourTimeLine = gsap.timeline();
+            ourTimeLine.to("#animate", {backgroundColor: "yellowgreen"})
+            ourTimeLine.to("#animate", {backgroundColor: "orange"})
+            ourTimeLine.to("#animate", {backgroundColor: "red"})
+</script>
+    </body>
 </html>
