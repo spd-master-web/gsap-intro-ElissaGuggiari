@@ -11,21 +11,27 @@
     <body>
 
         <div class="wrapper">
-            <div class="box" id="animate"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+            <div class="box box-1"></div>
+            <div class="box box-2" ></div>
+            <div class="box box-3"></div>
         </div>
 
         <script>
             //JavaScript comment
             console.log("hello, I am robot")
             // gsap library, .to() method, "" selector, {} instructions
-            gsap.to("#animate", {duration: 1, delay: 1, backgroundColor: "#ff0000"})
+            gsap.to("#animate", {duration: 1, delay: 1, backgroundColor: "red"})
+            // timeline
+            // var ourTimeLine = gsap.timeline();
+            // ourTimeLine.to("#animate", {duration: 1, backgroundColor: "yellowgreen"})
+            // ourTimeLine.to("#animate", {duration: 2, backgroundColor: "orange"})
+            // ourTimeLine.to("#animate", duration: 2, {backgroundColor: "red"})
             // timeline
             var ourTimeLine = gsap.timeline();
-            ourTimeLine.to("#animate", {backgroundColor: "yellowgreen"})
-            ourTimeLine.to("#animate", {backgroundColor: "orange"})
-            ourTimeLine.to("#animate", {backgroundColor: "red"})
+            ourTimeLine.to(".box-1", {duration: 2,x: 100, rotation: 45})
+            ourTimeLine.to(".box-2", {duration: 2,x: 100, rotation: 45}, 0)
+            ourTimeLine.to(".box-3", {duration: 2,x: 100, rotation: 45})
+
 </script>
     </body>
 </html>
