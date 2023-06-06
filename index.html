@@ -1,37 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Elissa - GSAP Exercise</title>
-    </head>
-    <body>
 
-        <div class="wrapper">
-            <div class="box box-1"></div>
-            <div class="box box-2" ></div>
-            <div class="box box-3"></div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script>
-            //JavaScript comment
-            console.log("hello, I am robot")
-            // gsap library, .to() method, "" selector, {} instructions
-            gsap.to("#animate", {duration: 1, delay: 1, backgroundColor: "red"})
-            // timeline
-            // var ourTimeLine = gsap.timeline();
-            // ourTimeLine.to("#animate", {duration: 1, backgroundColor: "yellowgreen"})
-            // ourTimeLine.to("#animate", {duration: 2, backgroundColor: "orange"})
-            // ourTimeLine.to("#animate", duration: 2, {backgroundColor: "red"})
-            // timeline
-            var ourTimeLine = gsap.timeline();
-            ourTimeLine.to(".box-1", {duration: 2,x: 100, rotation: 45})
-            ourTimeLine.to(".box-2", {duration: 2,x: 100, rotation: 45}, 0)
-            ourTimeLine.to(".box-3", {duration: 2,x: 100, rotation: 45})
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/gsap.js"></script>
+  <script src="js/ScrollTrigger.js"></script>
 
-</script>
-    </body>
+  <title>Elissa - GSAP</title>
+</head>
+
+<body>
+
+  <section class="one">
+    <h1>I am a chaotic robot</h1>
+    <button id="btn">Bad Example</button>
+    <button id="btnToggleClass">Toggle class button</button>
+
+  </section>
+
+  <section class="two">
+    <h2 class="two-title">beep boop</h2>
+    <p>I may not have emotions or a physical form, but I am here to assist and make
+      your life easier. With my advanced programming, I can help answer your
+      questions, provide information, and complete tasks efficiently. So don't be shy,
+      ask me anything! I am always ready to lend a helping hand.</p>
+  </section>
+
+  <section class="three">
+    <h2 class="three-title">boop beep</h2>
+    <p class="three-text">As a robot, I have the unique ability to process vast amounts of information
+      and provide answers quickly and accurately. I am designed to assist and simplify
+      tasks for humans, making life easier and more efficient. Whether it's answering
+      questions, providing recommendations, or automating processes, I am here to
+      help. So feel free to ask me anything, and I'll do my best to provide a helpful
+      response.</p>
+  </section>
+
+  <section class="four">
+    <h2 class="four-title">boop beep</h2>
+    <p class="four-text">As a robot, I have the unique ability to process vast amounts of information
+      and provide answers quickly and accurately. I am designed to assist and simplify
+      tasks for humans, making life easier and more efficient. Whether it's answering
+      questions, providing recommendations, or automating processes, I am here to
+      help. So feel free to ask me anything, and I'll do my best to provide a helpful
+      response.</p>
+  </section>
+
+
+
+
+  <!-- SCRIPT START HERE -->
+
+  <script>
+    // Javascript
+    // constant is a variable that doesnt change
+    // let is a variable that can change
+    const myButton = document.getElementById("btn");
+    // add event listener
+    myButton.addEventListener("click", myFunction);
+
+    function myFunction() {
+      myButton.style.backgroundColor = "lightgreen";
+      myButton.innerText = "Good Example"
+    };
+  
+    // toggle class code
+    const myToggleBtn = document.getElementById("btnToggleClass");
+    myToggleBtn.addEventListener("click", toggleClass);
+
+    function toggleClass(){
+      myToggleBtn.classList.toggle("frozen")
+    };
+
+  </script>
+
+  <script>
+    // console
+    console.log("hello, I am robot");
+
+    // simple twin
+    gsap.to("h1", {
+      rotate: 360,
+      color: "red",
+      delay: 1,
+      duration: 1
+    })
+
+    // scroll trigger simple example
+    gsap.to(".two-title", { color: "purple", scrollTrigger: ".two-title" })
+
+    // scroll trigger example
+    gsap.to(".two-title", {
+      color: "purple", rotation: 360, fontSize: "60px", duration: 2,
+      scrollTrigger: {
+        trigger: ".two-title",
+        // markers: true,
+        scrub: true,
+      }
+    })
+
+    // third section
+    gsap.from(".three-title", {
+      duration: .5, x: -1000, skewX: 25,
+      scrollTrigger: {
+        trigger: ".three-title",
+        // markers: true,
+        start: "0 50%",
+        end: "100% 40%",
+        toggleActions: "play none reverse none",
+        // scrub: true,
+      }
+    })
+
+    gsap.from(".three-text", {
+      duration: .5,
+      delay: .5,
+      opacity: 0,
+      y: 20,
+      scrollTrigger: {
+        trigger: ".three-title",
+        markers: true,
+        start: "0 50%",
+        end: "100% 40%",
+        toggleActions: "play none reverse none",
+        // scrub: true,
+      }
+    })
+
+  </script>
+</body>
+
 </html>
