@@ -1,38 +1,59 @@
 /* ROOT */
 :root {
-    --padding: 40px;
-    /* var(--padding) */
+  --padding: 40px;
+  /* var(--padding) */
 }
 
 /* INITIAL RULES */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    min-height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  min-height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* DIV */
 
 .wrapper {
-    background-color: pink;
-    padding: var(--padding);
+  background-color: pink;
+  padding: var(--padding);
 }
 
 .box {
-    --padding: 20px;
-    background-color: hotpink;
-    padding: var(--padding);
-    margin: var(--padding);
+  --padding: 20px;
+  background-color: hotpink;
+  padding: var(--padding);
+  margin: var(--padding);
+}
+
+.box-1 {
+  --padding: 20px;
+  background-color: hotpink;
+  padding: var(--padding);
+  margin: var(--padding);
+}
+
+.box-2 {
+  --padding: 20px;
+  background-color: hotpink;
+  padding: var(--padding);
+  margin: var(--padding);
+}
+
+.box-3 {
+  --padding: 20px;
+  background-color: hotpink;
+  padding: var(--padding);
+  margin: var(--padding);
 }
